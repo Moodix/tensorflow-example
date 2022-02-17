@@ -44,7 +44,7 @@ def main():
 
     data = pd.read_csv(input_path)
     one_hot_encoded_data = pd.get_dummies(data, columns = ['Code'])
-
+    df = one_hot_encoded_data[["Delay", "Code_200", "Code_201", "Code_204", "Code_302", "Code_400", "Code_404", "Code_500"]]
     model = LocalOutlierFactor(n_neighbors=20, novelty=True, contamination=0.1)
     model.fit(df)
 
