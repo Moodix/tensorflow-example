@@ -66,7 +66,6 @@ def main():
 
     suffix = uuid.uuid4()
     output_path = valohai.outputs().path(f'model-{suffix}.h5')
-    pickle.dumps(clf)
     joblib.dump(model, output_path)
 
 
