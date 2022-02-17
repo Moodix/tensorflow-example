@@ -22,6 +22,9 @@
           inputs:
             - name: dataset
             - name: datatest
+    edges:
+      - [preprocess.output.preprocessed_mnist.npz, train.input.dataset]
+      - [train.output.model*, evaluate.input.model]
 
 - endpoint:
     name: greet
