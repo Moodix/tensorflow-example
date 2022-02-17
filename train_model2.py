@@ -3,6 +3,7 @@ import uuid
 import numpy as np
 import tensorflow as tf
 import valohai
+import joblib
 
 import pandas as pd
 from sklearn.neighbors import LocalOutlierFactor
@@ -65,7 +66,8 @@ def main():
 
     suffix = uuid.uuid4()
     output_path = valohai.outputs().path(f'model-{suffix}.h5')
-    model.save(output_path)
+    pickle.dumps(clf)
+    joblib.dump(model, output_path)
 
 
 if __name__ == '__main__':
