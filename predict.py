@@ -39,7 +39,9 @@ def predict(environ, start_response):
     print(json.dumps({'vh_metadata': {k: v for k, v in prediction.items() if k != 'predictions'}}))
 
     # Return a JSON response
-    response = Response(json.dumps(prediction), content_type='application/json')
+    #response = Response(json.dumps(prediction), content_type='application/json')
+    d = {"foo": "bar"}
+    response = Response(json.dumps(d), content_type='application/json')
     return response(environ, start_response)
 
 
