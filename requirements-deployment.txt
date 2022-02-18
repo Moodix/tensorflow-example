@@ -6,3 +6,7 @@
 #
 pillow==8.3.2
     # via -r requirements-deployment.in
+pandas==1.4.1
+sklearn=1.0.2
+numpy=1.22.2
+joblib=1.1.0
